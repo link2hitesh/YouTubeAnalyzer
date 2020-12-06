@@ -1,0 +1,38 @@
+
+@(result: List[String])
+
+
+@main("Top Ten videos List"){
+
+<div class="similar" id ="segment1">
+
+    <h1  align="centre" >  Similarity Statistics  </h1>
+</div>
+
+    <div class="button" id="segment3">
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+    </div>
+
+<div class="similar2" id = "segment1">
+
+    @for(value <- result){
+        <h3>@value</h3>
+        <hr>
+
+
+    }
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+}

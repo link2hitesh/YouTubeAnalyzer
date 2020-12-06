@@ -1,0 +1,124 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <style>
+
+            #segment2{
+
+                border: 3px dashed #7F33FF;
+                margin-left: 300px;
+                margin-right: 300px;
+                margin-top: 30px;
+                padding-bottom: 20px;
+
+
+            }
+                #segment1{
+
+                    border: 3px dashed #7F33FF;
+                    text-align:center;
+                    margin-left: 300px;
+                    margin-right: 300px;
+                    margin-top: 30px;
+                    padding-bottom: 20px;
+
+
+                }
+                .starter{
+                    color:red;
+                }
+            .username{
+                width: 400px;
+                height: 23px;
+                border-color: #6495ED;
+            }
+             .btn{
+                 display = inline-block;
+
+                 width :36px;
+                 background: #fff;
+                 border-color: #6495ED;
+                 color:red;
+                 height : 36px;
+                 border-radius : 50%;
+                 text-align: center;
+
+                 vertical-align:middle;
+             }
+            .btn1{
+                display = inline-block;
+
+                width :45px;
+                background: #fff;
+                border-color: #6495ED;
+                color:red;
+                height : 45px;
+                border-radius : 50%;
+                text-align: center;
+
+                vertical-align:middle;
+            }
+            #VList{
+
+                background-color:#F7CAC9;
+
+
+            }
+            #VList2{
+
+                border: 3px dashed
+                #955251;
+                margin-left: 300px;
+                margin-right: 300px;
+                margin-top: 30px;
+                padding-bottom: 20px;
+                text-align: center;
+
+
+            }
+            .split {
+                height: 100%;
+
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                overflow-x: hidden;
+                padding-top: 20px;
+            }
+            .left {
+
+                width: 25%;
+                left: 0;
+                background-color: #955251 ;
+            }
+            .right {
+                width: 80%;
+                left: 25%;
+                background-color: #FFFFFF;
+            }
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+
+
+
+
+        </style>
+
+
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+    </head>
+    <body>
+    @content
+    </body>
+</html>

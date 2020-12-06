@@ -1,0 +1,16 @@
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\hites\Desktop\Project Part 1\Project Part 1\play-java-forms-example\app\views\listWidgets.scala.html:20:49: symbol literal is deprecated; use Symbol("_label") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m                @helper.inputText(form("name"), '_label -> " ",[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\hites\Desktop\Project Part 1\Project Part 1\play-java-forms-example\app\views\listWidgets.scala.html:21:21: symbol literal is deprecated; use Symbol("placeholder") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    'placeholder -> "Please enter your search here ",[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\hites\Desktop\Project Part 1\Project Part 1\play-java-forms-example\app\views\listWidgets.scala.html:22:21: symbol literal is deprecated; use Symbol("id") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    'id -> "title",[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\hites\Desktop\Project Part 1\Project Part 1\play-java-forms-example\app\views\listWidgets.scala.html:23:21: symbol literal is deprecated; use Symbol("size") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    'size -> 90, '_default -> "inline-block")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\hites\Desktop\Project Part 1\Project Part 1\play-java-forms-example\app\views\listWidgets.scala.html:23:34: symbol literal is deprecated; use Symbol("_default") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    'size -> 90, '_default -> "inline-block")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
