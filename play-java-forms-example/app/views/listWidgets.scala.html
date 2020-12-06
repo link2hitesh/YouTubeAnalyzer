@@ -1,0 +1,85 @@
+@import play.mvc.Http.Request
+@import akka.util.Helpers.Requiring
+@(Videocontent :Seq[check],Searchterm:String,widgets: Seq[Widget], form: Form[WidgetData])(implicit request: Request, messages: play.i18n.Messages)
+
+@main("Widgets") {
+
+
+
+    @* Flash shows updates to a page *@
+    @request.flash.asScala().data.map { case (name, value) =>
+    <div class="@name">@value</div>
+    }
+
+
+    <div class="group1" id="segment1">
+
+        <div class="starter">
+            <h2> Welcome to YouTubeAnalyzer </h2>
+        </div>
+        @helper.form(routes.WidgetController.createWidget(request.path().substring(1))) {
+            @helper.CSRF.formField
+
+            @helper.inputText(form("name") ,'_label -> " ",
+                'placeholder -> "Please enter your search here ",
+                'id -> "title",
+                'size -> 90,'_default -> "inline-block")
+
+            <button class="btn" type="submit">Go!</button>
+        }
+
+
+    </div>
+
+    <div class="search-list">
+    @for(videocontent <- Videocontent) {
+
+            <div class="group2" id="segment2">
+
+                <h2 > Search Terms:  @videocontent.value.getValue  </h2>
+                <ol>
+
+                @for(cc <- videocontent.getValue2 ){
+
+                    <li> <h4> Title : <a href="@routes.WidgetController.index3(videocontent.value.getValue)">  @cc.title </a> <br>
+
+                      Author :   <a href="@routes.WidgetController.owner(cc.chid)">  @cc.author  </a>       <br>
+
+                        Owner Videos :  <a href="@routes.WidgetController.index2(cc.chid+Searchterm)"> Get Latest vedios from Owner Channel</a>  <br>
+
+                        View Count  : @cc.viewcount       <br>
+
+                        Date :     @cc.posted          <br>
+
+                    </h4></li>
+
+                }
+                </ol>
+                <script>
+                    const socket = new WebSocket("ws://localhost:9000/x/ws");
+
+                    socket.addEventListener("open", function () {
+                        setInterval(function () {
+                            socket.send("@videocontent.value.getValue");
+                        }, 60000);
+                    })
+
+                    socket.addEventListener("message", function (msg) {
+                        if (msg.data) {
+
+                            console.log(msg);
+                            // const items = msg.toString().split("\n");
+                            //  console.log(items);
+
+
+                        }
+
+                        // Update date here
+                    });
+                </script>
+
+            </div>
+
+    }
+    </div>
+}

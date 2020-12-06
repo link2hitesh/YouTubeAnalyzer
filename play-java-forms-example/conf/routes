@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.WidgetController.index
+
+# Widgets
+
+GET     /:sessionId                       controllers.WidgetController.listWidgets(sessionId,request: Request)
+GET    /r/:name                        controllers.WidgetController.index2(name:String)
+GET    /rd/:Value                        controllers.WidgetController.index3(Value:String)
+POST    /:sessionId                    controllers.WidgetController.createWidget(sessionId,request: Request)
+
+GET /channel/:chanId				      controllers.WidgetController.owner(chanId:String)
+
+GET     /x/ws                         controllers.WidgetController.socket
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

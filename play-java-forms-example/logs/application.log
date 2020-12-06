@@ -1,0 +1,11 @@
+2020-12-05 18:27:20,754 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2020-12-05 18:27:20,849 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev) (no global state)
+2020-12-05 18:28:59,929 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-16-thread-1 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 35000 milliseconds timeout
+2020-12-05 18:28:59,932 [INFO] from play.core.server.AkkaHttpServer in pool-16-thread-1 - Stopping Akka HTTP server...
+2020-12-05 18:28:59,941 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-17 - Terminating server binding for /0:0:0:0:0:0:0:0:9000
+2020-12-05 18:29:00,001 [INFO] from play.core.server.AkkaHttpServer in play-dev-mode-akka.actor.internal-dispatcher-20 - Running provided shutdown stop hooks
