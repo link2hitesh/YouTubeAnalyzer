@@ -27,7 +27,7 @@ public class WidgetControllerTest extends WithApplication {
 
     /**
      * this method tests the welcome page of this webapp.
-     */
+
 
     @Test
     public void testIndex() {
@@ -55,7 +55,6 @@ public class WidgetControllerTest extends WithApplication {
     /**
      * this method tests the channel content functionality and check weather it returns the latest channel videos or not.
      * @author ankur aggarwal
-     */
 
     @Test
     public void testindex2() {
@@ -84,7 +83,7 @@ public class WidgetControllerTest extends WithApplication {
 
     /**
      * this method tests the data entered by the user and then the result of the search API(mock object).
-     */
+
 
     @Test
     public void testCreateWidget() {
@@ -96,6 +95,5 @@ public class WidgetControllerTest extends WithApplication {
         Result result = route(app, request);
         assertEquals(SEE_OTHER, result.status());
     }
-
+     */
 }
-
