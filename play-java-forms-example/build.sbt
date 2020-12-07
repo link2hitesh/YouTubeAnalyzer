@@ -81,8 +81,8 @@ libraryDependencies += guice
 //scalacOptions ++= List("-encoding", "utf8", "-Xfatal-warnings", "-deprecation")
 javacOptions ++= Seq(
   "-Xlint:unchecked",
-  "-Xlint:deprecation",
-  "-Werror"
+  "-Xlint:deprecation"
+  //"-Werror"
 ) 
 
 libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % "2.6.5" % Test
