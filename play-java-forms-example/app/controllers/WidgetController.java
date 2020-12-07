@@ -44,6 +44,7 @@ public class WidgetController extends Controller {
    // private final List<Data> inventory1;
     private List<check> dd  ;
     final ActorRef helloActor;
+    final ActorRef ownerActor;
 
 
 
@@ -72,6 +73,8 @@ public class WidgetController extends Controller {
         this.dd= com.google.common.collect.Lists.newArrayList(
         );
         helloActor = system.actorOf(ChannelVideoActor.getProps());
+        
+        ownerActor = system.actorOf(OwnerPageActor.getProps());
 
         this.widgets = com.google.common.collect.Lists.newArrayList(
                 //new Widget("Data 1")
