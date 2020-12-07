@@ -150,10 +150,13 @@ public class WidgetController extends Controller {
  * @param chanId
  * @return ownerView
  */
-public Result owner(String chanId) {
-	ChannelModel chM = new ChannelModel();
-	List<String> result = chM.Search(chanId);
-	return ok(views.html.ownerView.render(asScala(result)));
+public CompletionStage<Result> owner(String chanId) {
+    return FutureConverters.toJava(ask(ownerActor,new ChannelVideoProtocol.SayHello(chanId),1000)
+    )
+            .thenApply(response -> {
+                return ok(views.html.ownerView.render((ArrayList<String>)response));
+            });
+
 }
 
     /**
