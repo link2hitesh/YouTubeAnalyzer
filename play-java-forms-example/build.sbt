@@ -84,3 +84,5 @@ javacOptions ++= Seq(
   "-Xlint:deprecation",
   "-Werror"
 ) 
+
+libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % "2.6.5" % Test
