@@ -86,3 +86,10 @@ javacOptions ++= Seq(
 ) 
 
 libraryDependencies += "com.typesafe.akka" %% "akka-testkit" % "2.6.5" % Test
+
+
+// Testing libraries for dealing with CompletionStage...
+libraryDependencies += "org.assertj" % "assertj-core" % "3.8.0" % Test
+libraryDependencies += "org.awaitility" % "awaitility" % "3.0.0" % Test
+
+libraryDependencies += ws
