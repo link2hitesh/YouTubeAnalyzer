@@ -153,6 +153,7 @@ public class WidgetController extends Controller {
  * @param chanId
  * @return ownerView
  */
+@SuppressWarnings("unchecked")    
 public CompletionStage<Result> owner(String chanId) {
     return FutureConverters.toJava(ask(ownerActor,new ChannelVideoProtocol.SayHello(chanId),1000)
     )
