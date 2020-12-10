@@ -6,12 +6,27 @@ import akka.japi.*;
 import actors.ChannelVideoProtocol.*;
 import models.channelvideolist;
 import java.util.List;
+/**
+ * This actor contains a set of searchResults for the video of different channel
+ * Inspired by class notes
+ * @author Ankur Aggarwal
+ */
 
 public class ChannelVideoActor extends AbstractActor{
+
+    /**
+     * create the actor
+     * @return  actor
+     */
 
     public static Props getProps() {
         return Props.create(ChannelVideoActor.class);
     }
+
+    /**
+     * Handle the incoming messages
+     * @return Receive receive
+     */
 
     @Override
     public AbstractActor.Receive createReceive() {

@@ -23,7 +23,11 @@ import java.util.concurrent.TimeUnit;
 import scala.concurrent.duration.Duration;
 import static akka.pattern.PatternsCS.ask;
 
-
+/**
+ * This controller contains the WebSocket
+ * Inspired from https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/controllers/HomeController.java
+ * @author Adeyinka
+ */
 
 public class WebSocketController extends Controller{
 
@@ -31,12 +35,19 @@ private final Timeout t = new Timeout(Duration.create(1, TimeUnit.SECONDS));
 private final Logger logger = org.slf4j.LoggerFactory.getLogger("controllers.WebSocketController");
 private final ActorRef userParentActor;
 
-
+        /**
+         * Constructor
+         * @param userParentActor userParentActor provided by Guice
+         */
 @Inject
 public WebSocketController(@Named("userParentActor") ActorRef userParentActor) {
         this.userParentActor = userParentActor;
         }
 
+        /**
+         * Generate the WebSocket
+         * @return WebSocket
+         */
 
 public WebSocket ws() {
         return WebSocket.Json.acceptOrResult(request -> {
@@ -48,7 +59,11 @@ final CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> future = wsFutureFlow(r
         }
         });
         }
-
+        /**
+         * Create a UserParentActor with a given ID
+         * @param request Request to handle
+         * @return CompletionStage
+         */
 
 @SuppressWarnings("unchecked")
 private CompletionStage<Flow<JsonNode, JsonNode, NotUsed>> wsFutureFlow(Http.RequestHeader request) {

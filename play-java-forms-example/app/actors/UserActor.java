@@ -25,7 +25,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.*;
 import java.util.concurrent.CompletionStage;
-
+/**
+ * The connection  between the WebSocket and the SearchResultsActor(s).
+ * Inspired from https://github.com/playframework/play-java-websocket-example/blob/2.6.x/app/actors/UserActor.java
+ * @author Adeyinka
+ */
 
 public class UserActor extends AbstractActor {
 

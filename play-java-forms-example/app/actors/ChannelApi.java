@@ -16,11 +16,22 @@ import java.util.Iterator;
 import java.util.List;
 import models.*;
 
+
+/**
+ * This class is used for the retrieval of video from different channel
+ *  The code from this class is inspired by google data api @see https://github.com/youtube/api-samples/blob/master/java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/Search.java
+ * @author Ankur Aggarwal
+ */
 public class ChannelApi {
     private static final String PROPERTIES_FILENAME = "youtube.properties";
     private static YouTube youtube;
 
-
+    /**
+     * Initialize a YouTube object to search for videos on YouTube. Then
+     * display the name and thumbnail image of each video in the result set.
+     *
+     * //@param args command line args.
+     */
 
     public static List<channelvideolist> ChannelContent (String channelID) {
         final long NUMBER_OF_VIDEOS_RETURNED = 10;

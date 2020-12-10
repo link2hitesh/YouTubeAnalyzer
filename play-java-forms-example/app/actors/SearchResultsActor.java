@@ -15,6 +15,11 @@ import java.util.HashSet;
 import java.util.*;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
+/**
+ * the actor class for the youtube search fields
+ * @author Adeyinka
+ *
+ */
 
 
 public class SearchResultsActor extends AbstractActorWithTimers {
