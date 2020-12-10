@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import models.*;
 
 public class ChannelApi {
     private static final String PROPERTIES_FILENAME = "youtube.properties";
@@ -21,9 +22,10 @@ public class ChannelApi {
 
 
 
-    public static List<String> ChannelContent (String channelID) {
+    public static List<channelvideolist> ChannelContent (String channelID) {
         final long NUMBER_OF_VIDEOS_RETURNED = 10;
         List<String> videoContent=new ArrayList<>();
+        List< channelvideolist> sortedOrder = new ArrayList<>();
 
         try {
 
@@ -61,12 +63,13 @@ public class ChannelApi {
 
                     if (rId.getKind().equals("youtube#video")) {
                         String videoDetails=singleVideo.getSnippet().getTitle()+" # DATE OF UPLOAD # "+ singleVideo.getSnippet().getPublishedAt();
+                        sortedOrder.add(new channelvideolist(singleVideo.getSnippet().getTitle(),singleVideo.getSnippet().getPublishedAt().toString()));
                         videoContent.add(videoDetails);
 
 
                     }
                 });
-                return videoContent;
+                return sortedOrder;
 
             }
 
@@ -80,7 +83,7 @@ public class ChannelApi {
             t.printStackTrace();
         }
 
-        return videoContent;
+        return sortedOrder;
     }
 
 

@@ -1,51 +1,90 @@
-@(VTitle: List[String],V:String)
-@main("ListOfVedios"){
+@(VTitle: List[channelvideolist],VReverse:List[channelvideolist],V:String)
+    @main("ListOfVedios"){
 
-    <div class="split left">
+        <div class="split left">
 
-        <button class="btn1" onclick="goBack()"> Back</button>
+            <button class="btn1" onclick="goBack()"> Back</button>
 
+            <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+            </script>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 style="color:#85144b" align="center"> About This Page </h1>
+            <p style="text-align:center">This Page display the list of ten latest videos uploaded by the user on its channel.The list is sorted by order in which they are posted.This means list display videos in order of latest first. Along with the the videos title and the upload date is also uploaded in the list. </p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 style="color:#85144b" align="center"> Channel Owner's ID </h1>
+            <br>
+            <br>
+
+            <h1 style="color:#85144b" > @V </h1>
+        </div>
+
+
+        <button class="btn1" onclick="myFunction()">Order</button>
         <script>
-                function goBack() {
-                    window.history.back();
+                function myFunction(){
+                    const main = document.getElementById('VList2');
+                    const div= document.getElementById('VList3');
+                    const clone= div.cloneNode(true);
+
+                    while(main.firstChild) main.firstChild.remove();
+                    main.appendChild(clone);
+
                 }
         </script>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 style="color:#85144b" align="center"> About This Page </h1>
-        <p style="text-align:center">This Page display the list of ten latest videos uploaded by the user on its channel.The list is sorted by order in which they are posted.This means list display videos in order of latest first. Along with the the videos title and the upload date is also uploaded in the list. </p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 style="color:#85144b" align="center"> Channel Owner's ID </h1>
-        <br>
-        <br>
+        <div class="split right">
 
-        <h1 style="color:#85144b" > @V </h1>
-    </div>
 
-    <div class="split right">
+            <button class="btn1" onclick="myFunction()">Order</button>
+
+
+
 
             <h1 style="color:#85144b" align="center"> Latest Videos Posted by the Owner </h1>
             <div class="Video2" id = "VList2">
 
 
+            @for(value <- VTitle){
+                <h3> @value.title </h3>
+                <h3> @value.Date </h3>
 
-            @for(value <-VTitle){
-                <h3>@value</h3>
                 <hr>
 
 
                 }
 
 
+            </div>
+
+            <div class="Video3" id = "VList3" >
+
+
+            @for(value <- VReverse){
+                <h3> @value.title </h3>
+                <h3> @value.Date </h3>
+
+                <hr>
+
+
+                }
+
+
+            </div>
+
+
 
         </div>
-    </div>
 
 
-}
+
+    }

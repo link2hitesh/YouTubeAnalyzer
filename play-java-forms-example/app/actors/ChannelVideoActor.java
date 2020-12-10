@@ -4,7 +4,7 @@ import akka.actor.*;
 import akka.japi.*;
 
 import actors.ChannelVideoProtocol.*;
-
+import models.channelvideolist;
 import java.util.List;
 
 public class ChannelVideoActor extends AbstractActor{
@@ -23,7 +23,7 @@ public class ChannelVideoActor extends AbstractActor{
                             String name1 = hello.name;
                             String parts[] = name1.split("//");
                             String name2 = parts[0];
-                            List<String> reply = ChannelApi.ChannelContent(name2);
+                            List<channelvideolist> reply = ChannelApi.ChannelContent(name2);
                             //System.out.println(reply + "  " + reply.getClass());
 
                             // List<String> reply = Listwork.value(hello.name);

@@ -1,16 +1,28 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/safest version/Project Part 1/play-java-forms-example/app/views/listWidgets.scala.html:23:45: symbol literal is deprecated; use Symbol("_label") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/views/listWidgets.scala.html:23:45: symbol literal is deprecated; use Symbol("_label") instead[0m
 [0m[[0m[33mwarn[0m] [0m[0m            @helper.inputText(form("name") ,'_label -> " ",[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/safest version/Project Part 1/play-java-forms-example/app/views/listWidgets.scala.html:24:17: symbol literal is deprecated; use Symbol("placeholder") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/views/listWidgets.scala.html:24:17: symbol literal is deprecated; use Symbol("placeholder") instead[0m
 [0m[[0m[33mwarn[0m] [0m[0m                'placeholder -> "Please enter your search here ",[0m
 [0m[[0m[33mwarn[0m] [0m[0m                ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/safest version/Project Part 1/play-java-forms-example/app/views/listWidgets.scala.html:25:17: symbol literal is deprecated; use Symbol("id") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/views/listWidgets.scala.html:25:17: symbol literal is deprecated; use Symbol("id") instead[0m
 [0m[[0m[33mwarn[0m] [0m[0m                'id -> "title",[0m
 [0m[[0m[33mwarn[0m] [0m[0m                ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/safest version/Project Part 1/play-java-forms-example/app/views/listWidgets.scala.html:26:17: symbol literal is deprecated; use Symbol("size") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/views/listWidgets.scala.html:26:17: symbol literal is deprecated; use Symbol("size") instead[0m
 [0m[[0m[33mwarn[0m] [0m[0m                'size -> 90,'_default -> "inline-block")[0m
 [0m[[0m[33mwarn[0m] [0m[0m                ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/safest version/Project Part 1/play-java-forms-example/app/views/listWidgets.scala.html:26:29: symbol literal is deprecated; use Symbol("_default") instead[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/views/listWidgets.scala.html:26:29: symbol literal is deprecated; use Symbol("_default") instead[0m
 [0m[[0m[33mwarn[0m] [0m[0m                'size -> 90,'_default -> "inline-block")[0m
 [0m[[0m[33mwarn[0m] [0m[0m                            ^[0m
 [0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/actors/SearchResultsActor.java:43:1: startPeriodicTimer(java.lang.Object,java.lang.Object,scala.concurrent.duration.FiniteDuration) in akka.actor.TimerScheduler has been deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0mgetTimers().startPeriodicTimer[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/actors/UserParentActor.java:45:1: ask(akka.actor.ActorRef,java.lang.Object,akka.util.Timeout) in akka.pattern.PatternsCS has been deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0mask[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/actors/UserParentActor.java:46:1: <T>pipe(java.util.concurrent.CompletionStage<T>,scala.concurrent.ExecutionContext) in akka.pattern.PatternsCS has been deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0mpipe[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/controllers/WebSocketController.java:58:1: ask(akka.actor.ActorRef,java.lang.Object,akka.util.Timeout) in akka.pattern.PatternsCS has been deprecated[0m
+[0m[[0m[33mwarn[0m] [0m[0mask[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/controllers/WidgetController.java:165:1: unchecked cast[0m
+[0m[[0m[33mwarn[0m] [0m[0m  required: java.util.ArrayList<java.lang.String>[0m
+[0m[[0m[33mwarn[0m] [0m[0m  found:    java.lang.Object[0m
+[0m[[0m[33mwarn[0m] [0m[0mresponse[0m

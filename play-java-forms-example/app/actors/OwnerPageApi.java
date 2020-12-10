@@ -49,7 +49,7 @@ public class OwnerPageApi{
      * @return a list of channel properties from the youtube api
      */
     public static List<String> Search(String channelId) {
-       // System.out.println("heeereee "+ channelId);
+        System.out.println("heeereee "+ channelId);
         List<String> replyList = new ArrayList<String>();
         try {
             ChannelListResponse response ;

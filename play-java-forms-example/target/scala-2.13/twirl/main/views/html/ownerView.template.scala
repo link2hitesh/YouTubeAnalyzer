@@ -21,10 +21,10 @@ import play.data._
 import play.core.j.PlayFormsMagicForJava._
 import scala.jdk.CollectionConverters._
 
-object ownerView extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Seq[String],play.twirl.api.HtmlFormat.Appendable] {
+object ownerView extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[List[String],play.twirl.api.HtmlFormat.Appendable] {
 
   /* ownerView Template File */
-  def apply/*2.2*/(result: Seq[String]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*2.2*/(result: List[String]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
@@ -99,17 +99,23 @@ Seq[Any](format.raw/*3.1*/("""
       <p > <b>Views:</b> """),_display_(/*70.27*/result/*70.33*/.get(6)),format.raw/*70.40*/("""</p>
          </br>  
       <p > <b>Joined:</b> """),_display_(/*72.28*/result/*72.34*/.get(2)),format.raw/*72.41*/("""</p>
+      <button class="btn-primary" onclick="goBack()"> Back To Search</button>
+      <script>
+              function goBack() """),format.raw/*75.33*/("""{"""),format.raw/*75.34*/("""
+                """),format.raw/*76.17*/("""window.history.back();
+              """),format.raw/*77.15*/("""}"""),format.raw/*77.16*/("""
+      """),format.raw/*78.7*/("""</script>
    
     </br>
     
     </div>
     <div class="col-sm-8 text-left"> 
-      <h1 >Welcome To the <b style = "color:red"> """),_display_(/*78.52*/result/*78.58*/.get(1)),format.raw/*78.65*/(""" """),format.raw/*78.66*/("""</b> Youtube Page Information </h1>
+      <h1 >Welcome To the <b style = "color:red"> """),_display_(/*84.52*/result/*84.58*/.get(1)),format.raw/*84.65*/(""" """),format.raw/*84.66*/("""</b> Youtube Page Information </h1>
       </br>
       
       <hr>
       <h3>About</h3>
-     <p> """),_display_(/*83.11*/result/*83.17*/.get(0)),format.raw/*83.24*/("""</p>
+     <p> """),_display_(/*89.11*/result/*89.17*/.get(0)),format.raw/*89.24*/("""</p>
         
       
       </br>
@@ -129,16 +135,16 @@ Seq[Any](format.raw/*3.1*/("""
 
 
 
-""")))}),format.raw/*103.2*/("""
+""")))}),format.raw/*109.2*/("""
 
 """))
       }
     }
   }
 
-  def render(result:Seq[String]): play.twirl.api.HtmlFormat.Appendable = apply(result)
+  def render(result:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(result)
 
-  def f:((Seq[String]) => play.twirl.api.HtmlFormat.Appendable) = (result) => apply(result)
+  def f:((List[String]) => play.twirl.api.HtmlFormat.Appendable) = (result) => apply(result)
 
   def ref: this.type = this
 
@@ -147,11 +153,11 @@ Seq[Any](format.raw/*3.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-12-05T17:06:04.463
-                  SOURCE: /Users/ankuraggarwal/Desktop/safest version/Project Part 1/play-java-forms-example/app/views/ownerView.scala.html
-                  HASH: fbf69266b33662e988a88e362be164c02bacd6d2
-                  MATRIX: 941->31|1056->53|1084->56|1123->87|1161->88|1189->90|1755->628|1784->629|1818->636|1891->682|1919->683|1956->693|2073->782|2102->783|2143->796|2172->797|2209->807|2298->868|2327->869|2361->876|2464->952|2492->953|2529->963|2630->1036|2659->1037|2693->1044|2789->1113|2817->1114|2849->1119|3425->1668|3440->1674|3468->1681|3497->1682|3643->1801|3658->1807|3686->1814|3758->1859|3773->1865|3801->1872|3873->1917|3888->1923|3916->1930|3992->1979|4007->1985|4035->1992|4186->2116|4201->2122|4229->2129|4258->2130|4382->2227|4397->2233|4425->2240|4559->2343
-                  LINES: 27->2|32->3|34->5|34->5|34->5|36->7|46->17|46->17|47->18|49->20|49->20|51->22|52->23|52->23|52->23|52->23|54->25|55->26|55->26|56->27|59->30|59->30|61->32|62->33|62->33|63->34|66->37|66->37|68->39|91->62|91->62|91->62|91->62|95->66|95->66|95->66|97->68|97->68|97->68|99->70|99->70|99->70|101->72|101->72|101->72|107->78|107->78|107->78|107->78|112->83|112->83|112->83|132->103
+                  DATE: 2020-12-10T15:27:30.783
+                  SOURCE: /Users/ankuraggarwal/Desktop/YouTubeAnalyzer/play-java-forms-example/app/views/ownerView.scala.html
+                  HASH: 2cee002c369dbcc8b20c936512140112fe0046f2
+                  MATRIX: 942->31|1058->54|1086->57|1125->88|1163->89|1191->91|1757->629|1786->630|1820->637|1893->683|1921->684|1958->694|2075->783|2104->784|2145->797|2174->798|2211->808|2300->869|2329->870|2363->877|2466->953|2494->954|2531->964|2632->1037|2661->1038|2695->1045|2791->1114|2819->1115|2851->1120|3427->1669|3442->1675|3470->1682|3499->1683|3645->1802|3660->1808|3688->1815|3760->1860|3775->1866|3803->1873|3875->1918|3890->1924|3918->1931|3994->1980|4009->1986|4037->1993|4195->2123|4224->2124|4269->2141|4334->2178|4363->2179|4397->2186|4553->2315|4568->2321|4596->2328|4625->2329|4749->2426|4764->2432|4792->2439|4926->2542
+                  LINES: 27->2|32->3|34->5|34->5|34->5|36->7|46->17|46->17|47->18|49->20|49->20|51->22|52->23|52->23|52->23|52->23|54->25|55->26|55->26|56->27|59->30|59->30|61->32|62->33|62->33|63->34|66->37|66->37|68->39|91->62|91->62|91->62|91->62|95->66|95->66|95->66|97->68|97->68|97->68|99->70|99->70|99->70|101->72|101->72|101->72|104->75|104->75|105->76|106->77|106->77|107->78|113->84|113->84|113->84|113->84|118->89|118->89|118->89|138->109
                   -- GENERATED --
               */
           

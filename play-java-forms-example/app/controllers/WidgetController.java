@@ -45,6 +45,7 @@ public class WidgetController extends Controller {
     private List<check> dd  ;
     final ActorRef helloActor;
     final ActorRef ownerActor;
+    final ActorRef helloActor2;
 
 
 
@@ -73,6 +74,7 @@ public class WidgetController extends Controller {
         this.dd= com.google.common.collect.Lists.newArrayList(
         );
         helloActor = system.actorOf(ChannelVideoActor.getProps());
+        helloActor2=system.actorOf(SimillarActor.getProps());
         
         ownerActor = system.actorOf(OwnerPageActor.getProps());
 
@@ -92,7 +94,6 @@ public class WidgetController extends Controller {
         return redirect("/"+sessionId);
         //return ok(views.html.index.render());
     }
-
 
     public WebSocket socket() {
         return WebSocket.Text.accept(
@@ -123,37 +124,40 @@ public class WidgetController extends Controller {
     public  CompletionStage<Result> index2(String name){
         return FutureConverters.toJava(ask(helloActor,new ChannelVideoProtocol.SayHello(name),1000))
                 .thenApply(response -> {
-                    // String g = (String) response;
-                    // List<String> print = spliter(g);
-                    return ok(views.html.OwnerVedios.render((ArrayList<String>)response,name));
+
+                    List<channelvideolist> list_Sort = (ArrayList<channelvideolist>) response;
+                    String p[] =name.split("//");
+                    String S_t = p[1];
+
+                    List<channelvideolist> finalList= new ArrayList<>();
 
 
-                    //   return ok(String.valueOf(print));
+                    List<channelvideolist> list_Sort2 = ChannelOrder.sortedlist(list_Sort,S_t);
+                    List<channelvideolist> Reverse_list_Sort = ChannelOrder.Reverse_order(list_Sort2) ;
+
+                    return ok(views.html.OwnerVedios.render((ArrayList<channelvideolist>)list_Sort2,(ArrayList<channelvideolist>)Reverse_list_Sort,name));
+
                 });
     }
 
 
 
 
+    @SuppressWarnings("unchecked")
+    public CompletionStage<Result> index3(String search_term){
+        return FutureConverters.toJava(ask(helloActor2, new SimillarProtocol.SayHello2(search_term),1000))
+                .thenApply(response ->{
+
+                    return ok(views.html.Simillarcontent.render((ArrayList<String >)response));
+
+                });
+    }
+
+
     /**
-     * this method will generate the results for the similar content analysis.
-     * @param search_term
-     * @return ok to render html page for the similar contents
-     */
-    public Result index3(String search_term)
-{
-   ReturnSimilarContent rc = new ReturnSimilarContent();
-   List<String> dgh = rc.returnSimilarContent(search_term);
-
-
-    return ok(views.html.Simillarcontent.render(dgh));
-}
-
-/**
  * @param chanId
  * @return ownerView
  */
-@SuppressWarnings("unchecked")    
 public CompletionStage<Result> owner(String chanId) {
     return FutureConverters.toJava(ask(ownerActor,new ChannelVideoProtocol.SayHello(chanId),1000)
     )
