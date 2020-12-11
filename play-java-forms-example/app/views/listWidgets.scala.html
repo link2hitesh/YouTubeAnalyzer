@@ -31,55 +31,82 @@
 
     </div>
 
+    <script>
+        const socketMap = new Map();
+    </script>
+
     <div class="search-list">
     @for(videocontent <- Videocontent) {
 
             <div class="group2" id="segment2">
-
                 <h2 > Search Terms:  @videocontent.value.getValue  </h2>
-                <ol>
-
+                <ol id="search-@videocontent.value.getValue">
                 @for(cc <- videocontent.getValue2 ){
-
                     <li> <h4> Title : <a href="@routes.WidgetController.index3(videocontent.value.getValue)">  @cc.title </a> <br>
-
                       Author :   <a href="@routes.WidgetController.owner(cc.chid)">  @cc.author  </a>       <br>
-
                         Owner Videos :  <a href="@routes.WidgetController.index2(cc.chid+Searchterm)"> Get Latest vedios from Owner Channel</a>  <br>
-
                         View Count  : @cc.viewcount       <br>
-
                         Date :     @cc.posted          <br>
-
-                    </h4></li>
-
+                    </h4>
+                    </li>
                 }
                 </ol>
-                <script>
-                    const socket = new WebSocket("ws://localhost:9000/x/ws");
-
-                    socket.addEventListener("open", function () {
-                        setInterval(function () {
-                            socket.send("@videocontent.value.getValue");
-                        }, 60000);
-                    })
-
-                    socket.addEventListener("message", function (msg) {
-                        if (msg.data) {
-
-                            console.log(msg);
-                            // const items = msg.toString().split("\n");
-                            //  console.log(items);
-
-
-                        }
-
-                        // Update date here
-                    });
-                </script>
-
             </div>
+        <script>
+            socketMap.set("@videocontent.value.getValue", {
+                socket: new WebSocket("ws://localhost:9000/x/ws"),
+                container: document.getElementById("search-@videocontent.value.getValue")
+            });
 
+            socketMap.get("@videocontent.value.getValue").socket.addEventListener("open", function () {
+                const interval = setInterval(function () {
+                    socketMap.get("@videocontent.value.getValue").socket.send("@videocontent.value.getValue");
+                }, 60000);
+            })
+
+            socketMap.get("@videocontent.value.getValue").socket.addEventListener("message", function (msg) {
+                if (msg.data) {
+                    const { data } = msg;
+                    const rawItems = data.split("\n");
+
+                    for (let rawItem of rawItems) {
+                        const dataItems = rawItem.split("/>");
+                        const itemData = {
+                            author: dataItems[0],
+                            title: dataItems[1],
+                            viewCount: dataItems[2],
+                            id: dataItems[3],
+                            date: dataItems[4]
+                        };
+
+                        const li = document.createElement("li");
+                        const h4 = document.createElement("h4");
+
+                        li.innerHTML = `<h4> Title : <a href="@routes.WidgetController.index3(videocontent.value.getValue)">  ${itemData.title} </a> <br>
+                                          Author :   <a href=""> ${itemData.author} </a>       <br>
+                                            Owner Videos :  <a href=""> Get Latest vedios from Owner Channel</a>  <br>
+                                            View Count  : ${itemData.viewCount} <br>
+                                            Date : ${itemData.date} <br>
+                                        </h4>`;
+
+                        // Uncomment the below line if want to remove existing videos.
+                        //socketMap.get("@videocontent.value.getValue").container.innerHTML = "";
+
+                        socketMap.get("@videocontent.value.getValue").container.appendChild(li);
+                    }
+
+                    var video= msg.toString();
+                    var videoData=new Array(video.split("\n"));
+
+                    console.log(msg.data);
+                    // const items = msg.toString().split("\n");
+
+
+                }
+
+
+            });
+        </script>
     }
     </div>
 }
