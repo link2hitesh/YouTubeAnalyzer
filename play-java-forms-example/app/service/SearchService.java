@@ -6,6 +6,10 @@ import java.util.concurrent.CompletionStage;
 import java.util.*;
 import service.*;
 
+/**
+ * @author Adeyinka
+ * API to search the list of videos to be displayed on the main page.
+ */
 public class SearchService {
 
     @Inject private YoutubeServiceApi  serviceImpl;
