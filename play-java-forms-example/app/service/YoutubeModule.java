@@ -7,7 +7,9 @@ import play.libs.akka.AkkaGuiceSupport;
 import service.ChannelServiceImpl;
 import service.*;
 
-
+/**
+ * This class binds the YoutubeServiceAPI to the SearchServiceImpl
+ */
 public class YoutubeModule extends AbstractModule implements AkkaGuiceSupport{
 
     @Override
