@@ -6,8 +6,17 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class ChannelOrder {
+/**
+ * This class is used to format the result for the channel videos
+ * @ ankur aggarwal
+ */
 
+
+public class ChannelOrder {
+    /**
+     * This method sort result on the basis of search term
+     *
+     */
 
     public static boolean samequery1(channelvideolist Query,String field_S){
         String Q1 = Query.title;
@@ -20,6 +29,13 @@ public class ChannelOrder {
         }
 
     }
+
+
+
+    /**
+     * This method is used to reverse the order to list
+     *
+     */
        public static List<channelvideolist> Reverse_order(List<channelvideolist> Reverse){
 
            int size= Reverse.size();
@@ -35,7 +51,10 @@ public class ChannelOrder {
 
 
 
-
+    /**
+     * This method sort result on the basis of date followed by search term
+     *
+     */
 
     public static List<channelvideolist> sortedlist(List<channelvideolist> list_to_sort, String S_term){
 

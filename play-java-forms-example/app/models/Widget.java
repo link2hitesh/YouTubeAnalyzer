@@ -11,6 +11,10 @@ package models;
 public class Widget {
     public String name;
 
+    /**
+     * constructor
+     * @param name
+     */
     public Widget(String name) {
         this.name = name;
 

@@ -43,14 +43,10 @@ public class Search {
     private static YouTube youtube;
 
     /**
-     * Initialize a YouTube object to search for videos on YouTube. Then
-     * display the name and thumbnail image of each video in the result set.
-     *
+     * This method is used to wrap the synchronous api into asynchronous wrapper
+     * @return CompletableFuture
 
      */
-
-
-
 
        public CompletionStage<List<String>> AsynYoutube (String Fields_Search){
            return CompletableFuture.supplyAsync(()->youtube_Fields(Fields_Search,true,10));
@@ -60,9 +56,11 @@ public class Search {
 
 
 
+    /**
+     * This method is used to call the youtube api
+     * @return List of string
 
-
-
+     */
 
     public static List<String> youtube_Fields(String queryTerm, boolean type, int numOfVideos) {
 
@@ -93,7 +91,7 @@ public class Search {
 
             YouTube.Search.List search = youtube.search().list("id,snippet");
 
-            String apiKey = "AIzaSyC9bO1UKhrXrl1AnuSOAVI1QC9Mvwsa3T8";
+            String apiKey = "AIzaSyCVX-vu2xWqvxUfTflXQ8ob1L0DpvpGZAo";
             search.setKey(apiKey);
             search.setQ(queryTerm);
             search.setType("video");

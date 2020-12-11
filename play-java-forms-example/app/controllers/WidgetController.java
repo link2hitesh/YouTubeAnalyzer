@@ -63,6 +63,13 @@ public class WidgetController extends Controller {
 
 
     private final Logger logger = LoggerFactory.getLogger(getClass()) ;
+    /**
+     * constructor of the class
+     */
+
+
+
+
 
     @Inject
     public WidgetController(FormFactory formFactory, MessagesApi messagesApi, ActorSystem system) {
@@ -94,6 +101,11 @@ public class WidgetController extends Controller {
         return redirect("/"+sessionId);
         //return ok(views.html.index.render());
     }
+
+    /**
+     * Checking WebSocket
+     * @return WebSocket
+     */
 
     public WebSocket socket() {
         return WebSocket.Text.accept(
@@ -141,7 +153,12 @@ public class WidgetController extends Controller {
     }
 
 
-
+    /**
+     * This function takes in input the search term and provide with the list of simillar content.
+     *
+     * @param search_term value searched by user
+     * @return Ok to render HTML page.
+     */
 
     @SuppressWarnings("unchecked")
     public CompletionStage<Result> index3(String search_term){

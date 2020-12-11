@@ -49,7 +49,7 @@ public class ChannelApi {
 
             YouTube.Search.List search = youtube.search().list("id,snippet");
 
-            String apiKey = "AIzaSyC9bO1UKhrXrl1AnuSOAVI1QC9Mvwsa3T8";
+            String apiKey = "AIzaSyCVX-vu2xWqvxUfTflXQ8ob1L0DpvpGZAo";
             search.setKey(apiKey);
             //search.setQ(queryTerm);
             search.setChannelId(channelID); //to get videos from a channel

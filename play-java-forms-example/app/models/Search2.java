@@ -61,7 +61,11 @@ public class Search2 {
 
 
 
+    /**
+     * This method is used to wrap the synchronous api into asynchronous wrapper
+     * @return CompletableFuture
 
+     */
 
     public CompletionStage<List<check>> AsynYoutube (String Fields_Search){
         return CompletableFuture.supplyAsync(()-> youtube_Field(Fields_Search));
@@ -69,6 +73,11 @@ public class Search2 {
     }
 
 
+    /**
+     * This method is used to call the youtube api
+     * @return List of check
+
+     */
 
     public static List<check> youtube_Field (String queryTerm) {
 

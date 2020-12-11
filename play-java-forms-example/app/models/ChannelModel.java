@@ -29,6 +29,8 @@ import java.util.function.Consumer;
 
 
 /**
+ *
+ * The code from this class is inspired by google data api @see https://github.com/youtube/api-samples/blob/master/java/src/main/java/com/google/api/services/samples/youtube/cmdline/data/Search.java
  * @author Adeyinka
  *
  */
@@ -41,6 +43,9 @@ public class ChannelModel  {
 
 	private static final String CREDENTIALS_DIRECTORY = ".oauth-credentials";
 
+	/**
+	 * constructor
+	 */
 	public ChannelModel() {
 	}
 

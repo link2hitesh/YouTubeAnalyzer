@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class Videospliter {
     /**
+     * This method arrange the data
      * @param value  List of string from the data api
      * @return List of string in the format of title of video followed by the date
      */

@@ -1,4 +1,4 @@
-package controllers;
+package actors;
 
 import actors.ChannelApi;
 import actors.ChannelVideoActor;

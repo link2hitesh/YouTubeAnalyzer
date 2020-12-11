@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /**
- * Split the string in desired format to so store the value in List
+ * This class format data
  * @return  the List of type Data
  *
  * @author Ankur Aggarwal
@@ -12,6 +12,11 @@ import java.util.List;
  */
 
 public class Split {
+
+    /**
+     * Split the string in desired format to so store the value in List
+     * @return  the List of type Data
+     */
 
     public  static List<Data>  DataFinder(List<String> s){
         List<Data> finalt = new ArrayList<>();
