@@ -42,6 +42,11 @@ import java.util.function.Consumer;
 import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * This is the implementation of the the Channel service where the YoutubeService API searches
+ * for the author details.
+ */
+
 
 public class ChannelServiceImpl implements YoutubeServiceApi {
 
